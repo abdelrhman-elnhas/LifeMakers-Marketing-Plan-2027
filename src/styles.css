@@ -62,7 +62,7 @@
   .wheel-holder{display:flex; justify-content:center; align-items:center;}
   svg#wheel{width:100%; max-width:340px; height:auto;}
   .arc{cursor:pointer; transition:opacity .2s ease, transform .2s ease; transform-origin:200px 200px;}
-  .arc:hover, .arc:focus-visible{opacity:0.85;}
+  .arc:hover, .arc:focus, .arc:focus-visible{opacity:0.85; outline:none;}
   .arc.active{transform:scale(1.035);}
   .month-label{font-size:9.5px; fill:var(--ink-soft); font-family:'Tajawal'; font-weight:500;}
   .wheel-center-label{font-family:'Tajawal'; font-weight:700;}
