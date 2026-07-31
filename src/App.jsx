@@ -1,24 +1,28 @@
+import { useState } from "react";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import WheelSection from "./components/WheelSection";
-import PrinciplesSection from "./components/PrinciplesSection";
-import TeamsSection from "./components/TeamsSection";
-import EvergreenPillarsSection from "./components/EvergreenPillarsSection";
-import WeeklyCalendarSection from "./components/WeeklyCalendarSection";
-import DevPlanSection from "./components/DevPlanSection";
+import PlanPage from "./components/pages/PlanPage";
+import MeetingsPage from "./components/pages/MeetingsPage";
+import FacebookGrowthPage from "./components/pages/FacebookGrowthPage";
+import AdBudgetPage from "./components/pages/AdBudgetPage";
+import CharitiesPage from "./components/pages/CharitiesPage";
 import Footer from "./components/Footer";
 
+const pageComponents = {
+  plan: PlanPage,
+  meetings: MeetingsPage,
+  facebook: FacebookGrowthPage,
+  ads: AdBudgetPage,
+  charities: CharitiesPage,
+};
+
 export default function App() {
+  const [activePage, setActivePage] = useState("plan");
+  const ActivePageComponent = pageComponents[activePage];
+
   return (
     <div className="wrap">
-      <Header />
-      <Hero />
-      <WheelSection />
-      <EvergreenPillarsSection />
-      <WeeklyCalendarSection />
-      <PrinciplesSection />
-      <TeamsSection />
-      <DevPlanSection />
+      <Header activePage={activePage} onSelect={setActivePage} />
+      <ActivePageComponent />
       <Footer />
     </div>
   );
