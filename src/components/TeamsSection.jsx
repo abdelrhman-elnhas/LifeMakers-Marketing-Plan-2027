@@ -18,26 +18,28 @@ function Pipeline({ steps }) {
 
 function CampaignTable({ rows, headers }) {
   return (
-    <table className="campaign-table">
-      {
-        headers && (
-          <thead>
-            <tr>
-          <th>{headers[0]}</th>
-          <th>{headers[1]}</th>
-        </tr>
-      </thead>
-        )
-      }
-      <tbody>
-        {rows.map((row) => (
-          <tr key={row[0]}>
-            <td className="camp-name">{row[0]}</td>
-            <td>{row[1]}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="table-shell">
+      <table className="campaign-table">
+        {
+          headers && (
+            <thead>
+              <tr>
+                <th>{headers[0]}</th>
+                <th>{headers[1]}</th>
+              </tr>
+            </thead>
+          )
+        }
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row[0]}>
+              <td className="camp-name">{row[0]}</td>
+              <td>{row[1]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

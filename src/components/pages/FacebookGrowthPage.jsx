@@ -36,22 +36,24 @@ export default function FacebookGrowthPage() {
       </div>
 
       <h4 style={{ marginBottom: 16 }}>أفكار محتوى</h4>
-      <table className="campaign-table" style={{ marginBottom: 28 }}>
-        <thead>
-          <tr>
-            <th>الفكرة</th>
-            <th>ليه بتشتغل</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contentIdeas.map((c, i) => (
-            <tr key={i}>
-              <td className="camp-name">{c.idea}</td>
-              <td>{c.why}</td>
+      <div className="table-shell" style={{ marginBottom: 28 }}>
+        <table className="campaign-table">
+          <thead>
+            <tr>
+              <th>الفكرة</th>
+              <th>ليه بتشتغل</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {contentIdeas.map((c, i) => (
+              <tr key={i}>
+                <td className="camp-name">{c.idea}</td>
+                <td>{c.why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="why-box" style={{ marginBottom: 24 }}>
         <h4>ملخص القواعد كـ Checklist سريع</h4>

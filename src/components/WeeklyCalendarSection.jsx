@@ -12,32 +12,34 @@ function WeekTable({ rows, title }) {
   return (
     <div style={{ marginBottom: 28 }}>
       <h4 style={{ marginBottom: 12 }}>{title}</h4>
-      <table className="campaign-table">
-        <thead>
-          <tr>
-            <th>اليوم</th>
-            <th>التوقيت</th>
-            <th>المحور</th>
-            {title == 'لمسات إضافية في أسابيع الضغط (بالإضافة لجدول الأسبوع العادي)' && <th>الشكل</th>}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={i}>
-              <td className="camp-name">{r.day}</td>
-              <td>{r.time}</td>
-              <td>
-                <span
-                  className="focus-dot"
-                  style={{ background: focusColors[r.focus] || "#9CA6B0" }}
-                />
-                {r.focusLabel}
-              </td>
-              <td>{r.format}</td>
+      <div className="table-shell">
+        <table className="campaign-table">
+          <thead>
+            <tr>
+              <th>اليوم</th>
+              <th>التوقيت</th>
+              <th>المحور</th>
+              {title == 'لمسات إضافية في أسابيع الضغط (بالإضافة لجدول الأسبوع العادي)' && <th>الشكل</th>}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i}>
+                <td className="camp-name">{r.day}</td>
+                <td>{r.time}</td>
+                <td>
+                  <span
+                    className="focus-dot"
+                    style={{ background: focusColors[r.focus] || "#9CA6B0" }}
+                  />
+                  {r.focusLabel}
+                </td>
+                <td>{r.format}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

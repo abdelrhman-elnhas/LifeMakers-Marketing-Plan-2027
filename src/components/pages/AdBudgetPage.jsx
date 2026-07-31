@@ -110,24 +110,26 @@ export default function AdBudgetPage() {
       </div>
 
       <h4 style={{ marginBottom: 16 }}>ثانيًا: تحتاج إعلانات ممولة ولا لأ؟</h4>
-      <table className="campaign-table" style={{ marginBottom: 12 }}>
-        <thead>
-          <tr>
-            <th>السؤال</th>
-            <th>لو «أيوه»</th>
-            <th>لو «لأ»</th>
-          </tr>
-        </thead>
-        <tbody>
-          {paidAdsDecision.map((q, i) => (
-            <tr key={i}>
-              <td className="camp-name">{q.question}</td>
-              <td>{q.ifYes}</td>
-              <td>{q.ifNo}</td>
+      <div className="table-shell" style={{ marginBottom: 12 }}>
+        <table className="campaign-table">
+          <thead>
+            <tr>
+              <th>السؤال</th>
+              <th>لو «أيوه»</th>
+              <th>لو «لأ»</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {paidAdsDecision.map((q, i) => (
+              <tr key={i}>
+                <td className="camp-name">{q.question}</td>
+                <td>{q.ifYes}</td>
+                <td>{q.ifNo}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="note" style={{ marginBottom: 28 }}>💡 {practicalRule}</div>
 
       <h4 style={{ marginBottom: 16 }}>ثالثًا: كام إعلان ولمدة أد إيه</h4>

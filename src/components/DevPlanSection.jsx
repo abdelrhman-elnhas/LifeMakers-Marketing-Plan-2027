@@ -22,7 +22,7 @@ export default function DevPlanSection() {
         {ladderSteps.map((step, i) => (
           <span key={step}>
             <span className="ladder-step">{step}</span>
-            {i < ladderSteps.length - 1 && <span className="ladder-arrow">←</span>}
+            {i < ladderSteps.length - 1 && <span className="ladder-arrow" aria-hidden="true"></span>}
           </span>
         ))}
       </div>

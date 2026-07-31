@@ -27,24 +27,26 @@ export default function MeetingsPage() {
           {weeklySync.attendees} · {weeklySync.cadence}
         </p>
         <p style={{ fontSize: 14.5, color: "var(--ink-soft)", marginBottom: 16 }}>{weeklySync.purpose}</p>
-        <table className="campaign-table">
-          <thead>
-            <tr>
-              <th>الوقت</th>
-              <th>البند</th>
-              <th>التفاصيل</th>
-            </tr>
-          </thead>
-          <tbody>
-            {weeklySync.agenda.map((row, i) => (
-              <tr key={i}>
-                <td className="camp-name">{row.time}</td>
-                <td>{row.item}</td>
-                <td>{row.details}</td>
+        <div className="table-shell">
+          <table className="campaign-table">
+            <thead>
+              <tr>
+                <th>الوقت</th>
+                <th>البند</th>
+                <th>التفاصيل</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {weeklySync.agenda.map((row, i) => (
+                <tr key={i}>
+                  <td className="camp-name">{row.time}</td>
+                  <td>{row.item}</td>
+                  <td>{row.details}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className="note" style={{ marginTop: 16 }}>⚠️ {weeklySync.rule}</div>
       </div>
 
@@ -95,26 +97,28 @@ export default function MeetingsPage() {
 
       {/* Other meetings */}
       <h4 style={{ marginBottom: 16 }}>اجتماعات دورية أخرى</h4>
-      <table className="campaign-table" style={{ marginBottom: 24 }}>
-        <thead>
-          <tr>
-            <th>الاجتماع</th>
-            <th>مين فيه</th>
-            <th>كل قد إيه</th>
-            <th>الغرض</th>
-          </tr>
-        </thead>
-        <tbody>
-          {otherMeetings.map((m, i) => (
-            <tr key={i}>
-              <td className="camp-name">{m.name}</td>
-              <td>{m.attendees}</td>
-              <td>{m.cadence}</td>
-              <td>{m.purpose}</td>
+      <div className="table-shell" style={{ marginBottom: 24 }}>
+        <table className="campaign-table">
+          <thead>
+            <tr>
+              <th>الاجتماع</th>
+              <th>مين فيه</th>
+              <th>كل قد إيه</th>
+              <th>الغرض</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {otherMeetings.map((m, i) => (
+              <tr key={i}>
+                <td className="camp-name">{m.name}</td>
+                <td>{m.attendees}</td>
+                <td>{m.cadence}</td>
+                <td>{m.purpose}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="why-box">
         <h4>الفرق الجوهري بين الاجتماعين</h4>
