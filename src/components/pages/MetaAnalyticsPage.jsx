@@ -1,17 +1,15 @@
-import { useState } from "react";
 import guide from "../../data/metaAnalyticsGuide.json";
 
-function MetricAccordion({ metric, isOpen, onToggle }) {
+function MetricAccordion({ metric }) {
   return (
-    <div className={"acc-item" + (isOpen ? " open" : "")}>
-      <button type="button" className="acc-btn" onClick={onToggle}>
+    <div className="acc-item open">
+      <div className="acc-btn">
         <span>
           <strong>{metric.term}</strong>
           {metric.label ? ` — ${metric.label}` : ""}
         </span>
-        <span className="plus">+</span>
-      </button>
-      <div className="acc-panel" style={{ maxHeight: isOpen ? "2000px" : "0px" }}>
+      </div>
+      <div className="acc-panel" style={{ maxHeight: "2000px" }}>
         <div className="acc-panel-inner">
           {metric.analogy && (
             <p style={{ fontStyle: "italic", color: "var(--ink-soft)" }}>{metric.analogy}</p>
@@ -69,8 +67,6 @@ function MetricAccordion({ metric, isOpen, onToggle }) {
 }
 
 function CategorySection({ category }) {
-  const [openTerm, setOpenTerm] = useState(category.metrics[0]?.term || null);
-
   return (
     <div id={category.id} style={{ marginBottom: 40, scrollMarginTop: 90 }}>
       <h3 style={{ marginBottom: 4 }}>{category.title_ar} <span style={{ color: "var(--ink-soft)", fontWeight: 400, fontSize: 15 }}>({category.title_en})</span></h3>
@@ -80,8 +76,6 @@ function CategorySection({ category }) {
           <MetricAccordion
             key={m.term}
             metric={m}
-            isOpen={openTerm === m.term}
-            onToggle={() => setOpenTerm(openTerm === m.term ? null : m.term)}
           />
         ))}
       </div>
