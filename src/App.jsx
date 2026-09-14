@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import PlanPage from "./components/pages/PlanPage";
 import MeetingsPage from "./components/pages/MeetingsPage";
+import MetaAnalyticsPage from "./components/pages/MetaAnalyticsPage";
 import FacebookGrowthPage from "./components/pages/FacebookGrowthPage";
 import AdBudgetPage from "./components/pages/AdBudgetPage";
 import CharitiesPage from "./components/pages/CharitiesPage";
@@ -11,6 +12,7 @@ const pageComponents = {
   plan: PlanPage,
   meetings: MeetingsPage,
   facebook: FacebookGrowthPage,
+  metaGuide: MetaAnalyticsPage,
   ads: AdBudgetPage,
   charities: CharitiesPage,
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import copy from "../data/copy.json";
 
-const pages = ["plan", "meetings", "facebook", "ads", "charities"];
+const pages = ["plan", "meetings", "metaGuide", "facebook", "ads", "charities"];
 
 export default function Header({ activePage, onSelect }) {
   const [menuOpen, setMenuOpen] = useState(false);
