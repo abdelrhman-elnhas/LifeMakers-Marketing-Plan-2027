@@ -125,22 +125,24 @@ export default function MetaAnalyticsPage() {
         </div>
 
         <h4 style={{ marginBottom: 12 }}>معجم سريع</h4>
-        <table className="campaign-table">
-          <thead>
-            <tr>
-              <th>المصطلح</th>
-              <th>المعنى</th>
-            </tr>
-          </thead>
-          <tbody>
-            {basics.glossary.map((g) => (
-              <tr key={g.term}>
-                <td className="camp-name" style={{ direction: "ltr", textAlign: "right" }}>{g.term}</td>
-                <td>{g.definition}</td>
+        <div className="table-shell">
+          <table className="campaign-table">
+            <thead>
+              <tr>
+                <th>المصطلح</th>
+                <th>المعنى</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {basics.glossary.map((g) => (
+                <tr key={g.term}>
+                  <td className="camp-name" style={{ direction: "ltr", textAlign: "right" }}>{g.term}</td>
+                  <td>{g.definition}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* CATEGORIES */}
